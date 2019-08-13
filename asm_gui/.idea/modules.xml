@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/asm_gui.iml" filepath="$PROJECT_DIR$/asm_gui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../micro_comp_console_machine_emulator/micro_comp_console_machine_emulator.iml" filepath="$PROJECT_DIR$/../micro_comp_console_machine_emulator/micro_comp_console_machine_emulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../micro_comp_console_syntax/micro_comp_console_syntax_analysis.iml" filepath="$PROJECT_DIR$/../micro_comp_console_syntax/micro_comp_console_syntax_analysis.iml" />
+    </modules>
+  </component>
+</project>

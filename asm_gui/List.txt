@@ -1,0 +1,26 @@
+List file
+001       ORG 1H
+001 e0 30 LDRB a,30H;  a=25H (младший байт)
+003 e4 32 LDRB b,32H;  b=faH
+005 01    ADD a,b;  a=a+b=1fH, установлен флаг С
+006 f0 34 SVRB a,34H;  мл.байт результата = 1fH
+008 d0 00 LDRC a,00H;  a=0
+00a cf 0e JNC 0EH;  если С=0, пропуск след.команды
+00c d0 01 LDRC a,01h;  a=1 (учет переноса, тк С=1)
+00e e4 31 LDRB b,31H;  b=3H(старший байт)
+010 01    ADD a,b;  a=a+b=3H плюс перенос С
+011 e4 33 LDRB b,33H;  b=4H
+013 01    ADD a,b;  a=a+b=7H+перенос С
+014 f0 35 SVRB a,35H;  старший байт результата
+016 d0 00 LDRC a,0H
+018 d4 00 LDRC b,0H
+           END
+01a       ;
+01a       ;
+030       ORG 30H
+030 25    DATA 25H; A=325H
+031 03    DATA 03H
+032 fa    DATA FAH; B=4FAH
+033 04    DATA 04H
+034 00    DATA 0H; res=81FH
+035 00    DATA 0H

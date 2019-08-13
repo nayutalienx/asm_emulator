@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import org.fxmisc.richtext.CodeArea?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="639.0" prefWidth="1096.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#loadAsmFile" text="Загрузить файл ..." />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox alignment="TOP_RIGHT" prefHeight="590.0" prefWidth="1096.0">
+         <children>
+            <CodeArea fx:id="asmCodeEditor" prefHeight="422.0" prefWidth="552.0" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <TabPane>
+               <tabs>
+                  <Tab closable="false" text="Листинг файл">
+                     <content>
+                        <CodeArea fx:id="listingView" prefHeight="422.0" prefWidth="308.0" />
+                     </content>
+                  </Tab>
+                  <Tab closable="false" text="Бинарный файл">
+                     <content>
+                        <CodeArea fx:id="binaryView" prefHeight="200.0" prefWidth="200.0" />
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <VBox alignment="TOP_RIGHT" prefHeight="422.0" prefWidth="237.0">
+               <children>
+                  <Separator prefWidth="200.0" />
+                  <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#genListingAndBinary" prefHeight="49.0" prefWidth="231.0" text="Сгенерировать листинг файл и бинарный файл" textAlignment="CENTER" wrapText="true">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </Button>
+                  <Separator prefWidth="200.0" />
+                  <Button mnemonicParsing="false" onAction="#loadRam" prefHeight="46.0" prefWidth="231.0" text="Загрузить в ОП" textAlignment="CENTER" />
+                  <Separator prefWidth="200.0" />
+                  <Button mnemonicParsing="false" onAction="#runEmulator" prefHeight="49.0" prefWidth="231.0" text="Выполнить на эмуляторе" />
+                  <Separator prefWidth="200.0" />
+                  <CheckBox fx:id="translateCodeAutomatically" mnemonicParsing="false" text="Генерировать листинг файл и бинарный файл при загрузке" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <Separator prefWidth="200.0" />
+                  <Label text="Мониторинг памяти и регистров процессора:" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TreeTableView fx:id="emulatorData" prefHeight="181.0" prefWidth="200.0">
+                    <columns>
+                      <TreeTableColumn prefWidth="75.0" text="C1" />
+                      <TreeTableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TreeTableView>
+               </children></VBox>
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+      <HBox prefHeight="360.0" prefWidth="1096.0">
+         <children>
+            <ListView fx:id="statusView" focusTraversable="false" prefHeight="192.0" prefWidth="552.0" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+            <TextArea fx:id="emulatorStatus" prefHeight="192.0" prefWidth="546.0" />
+            <Separator orientation="VERTICAL" prefHeight="200.0" />
+         </children>
+      </HBox>
+      <Separator prefWidth="200.0" />
+   </children>
+</VBox>

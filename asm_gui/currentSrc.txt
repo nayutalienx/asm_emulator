@@ -1,0 +1,25 @@
+ORG 1H
+LDRB a,30H;  a=25H (младший байт)
+LDRB b,32H;  b=faH
+ADD a,b;  a=a+b=1fH, установлен флаг С
+SVRB a,34H;  мл.байт результата = 1fH
+LDRC a,00H;  a=0
+JNC 0EH;  если С=0, пропуск след.команды
+LDRC a,01h;  a=1 (учет переноса, тк С=1)
+LDRB b,31H;  b=3H(старший байт)
+ADD a,b;  a=a+b=3H плюс перенос С
+LDRB b,33H;  b=4H
+ADD a,b;  a=a+b=7H+перенос С
+SVRB a,35H;  старший байт результата
+LDRC a,0H
+LDRC b,0H
+END
+;
+;
+ORG 30H
+DATA 25H; A=325H
+DATA 03H
+DATA FAH; B=4FAH
+DATA 04H
+DATA 0H; res=81FH
+DATA 0H

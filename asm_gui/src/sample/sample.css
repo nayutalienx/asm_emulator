@@ -1,0 +1,53 @@
+#codeArea .text {
+     -fx-font-family: consolas;
+     -fx-font-size: 15pt;
+}
+
+.list-view {
+    -fx-font-family: consolas;
+    -fx-font-weight: bold;
+    -fx-font-size: 14pt;
+}
+
+#codeArea2 .text {
+    -fx-font-family: consolas;
+    -fx-font-size: 15pt;
+}
+
+#codeArea3 .text {
+    -fx-font-family: consolas;
+    -fx-font-size: 15pt;
+}
+
+.keyword {
+    -fx-fill: purple;
+    -fx-font-weight: bold;
+}
+.semicolon {
+    -fx-fill: olivedrab;
+    -fx-font-weight: lighter;
+    -fx-font-style: italic;
+}
+.paren {
+    -fx-fill: firebrick;
+    -fx-font-weight: bold;
+}
+.bracket {
+    -fx-fill: darkgreen;
+    -fx-font-weight: bold;
+}
+.brace {
+    -fx-fill: teal;
+    -fx-font-weight: bold;
+}
+.string {
+    -fx-fill: blue;
+}
+
+.comment {
+	-fx-fill: cadetblue;
+}
+
+.paragraph-box:has-caret {
+    -fx-background-color: #f2f9fc;
+}
